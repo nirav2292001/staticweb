@@ -44,8 +44,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "GitHub Actions"
+          git remote set-url origin https://x-access-token:$GH_PAT@github.com/nirav2292001/staticweb.git
           git add k8s-manifests/deployment.yaml
-          git commit -m "Update deployment image to ${{ github.sha }}"
-          git push https://$GH_PAT@github.com/nirav2292001/staticweb.git main
+          git commit -m "Update deployment image to ${{ github.sha }}" || echo "No changes to commit"
+          git push origin main
