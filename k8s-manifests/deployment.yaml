@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: static-website
-          image: nirav2201/static-website:addeb468821ace3caaa0176415215551a3be620c
+          image: nirav2201/static-website:40040017008127dad736082192f3ab3e393b1f4c
           ports:
             - containerPort: 80
 
