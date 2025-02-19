@@ -41,12 +41,11 @@ jobs:
           sed -i "s|image:.*|image: ${{ secrets.DOCKER_USERNAME }}/static-website:${{ github.sha }}|" k8s-manifests/deployment.yaml
 
       - name: Commit and Push Changes
-  	env:
-    	  GH_PAT: ${{ secrets.GH_PAT }}
-  	run: |
-    	  git config --global user.email "github-actions@github.com"
-    	  git config --global user.name "GitHub Actions"
-    	  git add k8s-manifests/deployment.yaml
-    	  git commit -m "Update deployment image to ${{ github.sha }}"
-    	  git push https://$GH_PAT@github.com/nirav2292001/staticweb.git main
-
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add k8s-manifests/deployment.yaml
+          git commit -m "Update deployment image to ${{ github.sha }}"
+          git push https://$GH_PAT@github.com/nirav2292001/staticweb.git main
