@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3  # Gets the latest code from GitHub
+        uses: actions/checkout@v3
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -42,11 +42,10 @@ jobs:
 
       - name: Commit and Push Changes
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-          git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/nirav2292001/staticweb.git
           git add k8s-manifests/deployment.yaml
           git commit -m "Update deployment image to ${{ github.sha }}" || echo "No changes to commit"
-          git push origin main
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/nirav2292001/staticweb.git main
