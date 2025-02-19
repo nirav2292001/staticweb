@@ -1,4 +1,4 @@
-🚀 GitOps Pipeline with GitHub Actions & ArgoCD
+#  🚀 GitOps Pipeline with GitHub Actions & ArgoCD 
 
 🌟 Overview
 This project demonstrates a CI/CD pipeline using GitHub Actions, Docker, Kubernetes, and ArgoCD. It automates application deployment to a Kubernetes cluster using a GitOps approach.
@@ -17,21 +17,6 @@ This project demonstrates a CI/CD pipeline using GitHub Actions, Docker, Kuberne
 🔹 ArgoCD
 📦 Docker Hub
 
-🏗 Project Structure
-/  
-├── .github/workflows/        # GitHub Actions CI/CD pipeline
-│   ├── ci-cd.yaml            # CI/CD workflow
-│
-├── k8s-manifests/            # Kubernetes deployment manifests
-│   ├── deployment.yaml       # Deployment manifest
-│   ├── service.yaml          # Service manifest
-│
-├── src/                      # Application source code (if applicable)
-│
-├── Dockerfile                # Docker build configuration
-├── README.md                 # Documentation
-├── LICENSE                   # Open-source license
-├── .gitignore                # Ignore unnecessary files
 
 🚀 Setup & Installation
 
